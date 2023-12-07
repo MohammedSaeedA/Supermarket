@@ -1,0 +1,37 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.layout.GridPane;
+import javafx.scene.control.Label;
+import javafx.stage.Stage;
+
+public class SupermarketApp extends Application {
+
+    @Override
+    public void start(Stage primaryStage) {
+        primaryStage.setTitle("Supermarket Layout");
+
+        GridPane grid = new GridPane();
+        grid.setHgap(10);
+        grid.setVgap(10);
+
+        // Creating aisles
+        for (int i = 1; i <= 3; i++) {
+            Label aisle = new Label("Aisle " + i);
+            grid.add(aisle, i, 0); // Adjust position as needed
+        }
+
+        // Creating checkouts
+        for (int i = 1; i <= 3; i++) {
+            Label checkout = new Label("Checkout " + i);
+            grid.add(checkout, i, 1); // Adjust position as needed
+        }
+
+        Scene scene = new Scene(grid, 800, 600);
+        primaryStage.setScene(scene);
+        primaryStage.show();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
+    }
+}
